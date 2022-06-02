@@ -8,7 +8,19 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = null;
+const createDate = (sebuahArray,posisi = NaN)=>{
+  let counter = 0;
+  const sebuahArrayNew = [];
+  while (counter < sebuahArray.length) {
+    sebuahArrayNew.push(Date.parse(sebuahArray[counter]).toString().substring(0,10));
+    counter++;
+  }
+  if (isNaN(posisi)) {
+    return sebuahArrayNew.sort().join("-")
+  }else{
+    return sebuahArrayNew[posisi];
+  }
+};
 
 // ! JANGAN DIMODIFIKASI
 (() => {
